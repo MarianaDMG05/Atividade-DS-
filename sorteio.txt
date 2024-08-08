@@ -1,5 +1,3 @@
-
-
 using System;
 
 public class HelloWorld
@@ -15,32 +13,41 @@ public class HelloWorld
         
         - CLASSES SEMPRE COMEÇAM COM LETRA MAIÚSCULA.
         */
-        
-        
-        // ELABORE UM PROGRAMA QUE SORTEIE UM NUMERO DE 0 A 10, SOLICITE AO USUARIO EM 3 TENTATIVAS QUAL NUMERO ELE ACHA QUE FOI SORTEADO, CONTE QUANTAS TENTATIVAS O USUARIO ESTA FAZENDO, CASO ELE ACERTE APRESENTE O NUMERO E A QUANTIDADE DE TENTATIVAS, CASO ELE NAO ACERTE NAS 3 TENTATIVAS, AVISE-O QUE PERDEU, E INFORME O NUMERO SORTEADO. CASO O USUARIO DIGITE UM NUMERO QUE NAO ESTEJA NA FAIXA, SOLICITE UM NOVO NUMERO E NAO CONTE A TENTATIVA.
-        
-    Random rand = new Random();
-    int numero = rand.Next(11); // Gera um número entre 0 e 10
-    string numeroUsuario; // Cria a variável que armazena o número digitado pelo usuário
-    int tentativas = 3; // define o numero de tentativas limite que o usuario tem
-    
-    
-    for (int i = 0; i < tentativas; i++)
-    {
-         Console.WriteLine("Ola usuario, tente acertar o número que sorteei. Voce tem 3 tentativas:");
-            numeroUsuario = Console.ReadLine();
-            
-        if (numero == int.Parse(numeroUsuario))
-        {
-              Console.WriteLine("Voce acertou!");
-        }
-        else
-        {
-            Console.WriteLine("Voce errou, tente novamente");
-        }
-    }
 
+
+        // ELABORE UM PROGRAMA QUE SORTEIE UM NUMERO DE 0 A 10, SOLICITE AO USUARIO EM 3 TENTATIVAS QUAL NUMERO ELE ACHA QUE FOI SORTEADO, CONTE QUANTAS TENTATIVAS O USUARIO ESTA FAZENDO, CASO ELE ACERTE APRESENTE O NUMERO E A QUANTIDADE DE TENTATIVAS, CASO ELE NAO ACERTE NAS 3 TENTATIVAS, AVISE-O QUE PERDEU, E INFORME O NUMERO SORTEADO. CASO O USUARIO DIGITE UM NUMERO QUE NAO ESTEJA NA FAIXA, SOLICITE UM NOVO NUMERO E NAO CONTE A TENTATIVA.
+
+        Random rand = new Random();
+        int numero = rand.Next(11); // Gera um número entre 0 e 10
+        string numeroUsuario; // Cria a variável que armazena o número digitado pelo usuário
+        int tentativas = 3; // define o numero de tentativas limite que o usuario tem
+        int contador = 0;
+
+        for (int i = 0; i < tentativas; i++)
+        {
+
+            Console.WriteLine("Digite um numero para sortear entre 0 e 10");
+            numeroUsuario = Console.ReadLine();
+            contador++;
+    
+            {
+                if (numero == int.Parse(numeroUsuario) /*transforma o numero digitado pelo usuario em um numeo inteiro*/)
+                {
+                    Console.WriteLine("Voce acertou!");
+
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Voce errou!");
+
+                }
+            }
+        }
+
+            Console.WriteLine("Voce tentou " + contador + " vezes");
+            Console.WriteLine("O numero sorteado foi " + numero + "!");
         
-        
+
     }
 }
